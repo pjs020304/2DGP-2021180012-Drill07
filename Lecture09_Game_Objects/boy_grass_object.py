@@ -30,44 +30,43 @@ class Grass:
 
 class LBall:
     def __init__(self):
-        self.x, self.y = random.randint(100,500), random.randint(150,500)
+        self.x, self.y = random.randint(100,500), 599
         self.image = load_image('ball41x41.png')
         self.fall = True
-        self.speed = random.randint(2, 8)
+        self.speed = random.randint(5, 15)
     def update(self):
-        self.x +=3
         if self.fall:
+            self.x += 3
             self.y-=self.speed
         else:
-            self.y+=self.speed
+            pass
 
 
         if self.y<88:
             self.fall = False
-        if self.y>550:
-            self.fall = True
+
 
     def draw(self):
         self.image.draw(self.x,self.y)
 
 class SBall:
     def __init__(self):
-        self.x, self.y = random.randint(100,500), random.randint(150,500)
+        self.x, self.y = random.randint(100,500), 599
         self.image = load_image('ball21x21.png')
         self.fall = True
-        self.speed = random.randint(2, 8)
+        self.speed = random.randint(5, 15)
 
     def update(self):
-        self.x += 3
+
         if self.fall:
+            self.x += 3
             self.y -= self.speed
         else:
-            self.y += self.speed
+            pass
 
         if self.y < 88:
             self.fall = False
-        if self.y > 550:
-            self.fall = True
+
 
     def draw(self):
         self.image.draw(self.x, self.y)
